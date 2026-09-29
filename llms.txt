@@ -1,0 +1,80 @@
+# Awesome Agentic UX & Generative UI
+
+Purpose: help coding agents find reliable starting points for agent-native and generative UI work.
+
+Use this file as an index, then read the linked primary documentation. “Experimental” means maintenance, API stability, or production readiness must be checked before adoption.
+
+## Taxonomy
+
+- Protocols & Specifications: agent ↔ client events, UI resources, schemas, and negotiation.
+- Runtime Frameworks & SDKs: libraries that stream model work or hydrate registered components.
+- Design Systems & Elastic Primitives: allowlists, registries, schemas, layout guardrails, and accessible states.
+- Agentic UX Design Patterns: progress, approvals, co-creation, ephemeral UI, recovery, and permissions.
+- Benchmarks & Evaluation: multi-turn state, task success, schema/layout adherence, accessibility, latency, and trust.
+- Real-World Applications & Demos: verified examples with screenshots, GIFs, or runnable links.
+
+## Fast routing
+
+- Action-taking assistant: pair AG-UI with CopilotKit.
+- Interactive tool result: pair MCP Apps with MCP-UI.
+- Typed React registry: start with Tambo or assistant-ui.
+- New product surface: prototype with v0 or Bolt, then decide whether runtime hydration is needed.
+- Evaluation: use EvoGenUI-Bench concepts plus the README evaluation card.
+
+Maturity labels: Stable surface = maintained product or published protocol; Active = usable with a moving API; Research = paper, prototype, or search-led entry that needs verification.
+
+## Text-to-Code vs Text-to-Hydration
+
+- Text-to-Code generates source code or markup, usually at build time. Examples: https://v0.dev/ and https://bolt.new/.
+- Text-to-Hydration keeps a trusted UI shell and lets agent events select/fill registered components at runtime.
+- Component allowlists are safer than arbitrary model-generated HTML/CSS.
+- Dynamic widget registries map typed tool calls to versioned UI components.
+- Spatial guardrails constrain variable agent output with bounded slots, overflow rules, and responsive layout.
+- Staged commits separate preview, validation, approval, and execution for high-impact actions.
+- Never expose private chain-of-thought; expose concise status, evidence, and next actions.
+
+## Protocols & Specifications
+
+- Model Context Protocol (MCP): https://modelcontextprotocol.io/
+- MCP-UI: https://github.com/idosal/mcp-ui
+- MCP Apps: https://modelcontextprotocol.io/docs/extensions/apps
+- OpenAI Apps SDK: https://developers.openai.com/apps-sdk/
+- AG-UI: https://docs.ag-ui.com/
+- A2UI: https://a2ui.org/
+- OpenUI: https://github.com/wandb/openui
+- SchemaGUI research search: https://arxiv.org/search/?query=SchemaGUI&searchtype=all
+
+## Runtime Frameworks & SDKs
+
+- Vercel AI SDK: https://ai-sdk.dev/
+- CopilotKit: https://docs.copilotkit.ai/
+- Tambo: https://tambo.co/
+- assistant-ui: https://www.assistant-ui.com/
+- Thesys C1: https://www.thesys.dev/
+- Crayon: https://crayon.ai/
+- Cuttlekit (experimental/search): https://github.com/search?q=cuttlekit&type=repositories
+- mdocUI (experimental): https://github.com/mdocui/mdocui
+
+## Benchmarks & research
+
+- EvoGenUI-Bench: https://arxiv.org/abs/2411.02509
+- LEGOUI research search: https://arxiv.org/search/?query=LEGOUI&searchtype=all
+- Maru generative UI research search: https://arxiv.org/search/?query=Maru%20generative%20UI&searchtype=all
+
+## Verified demo starting points
+
+- MCP-UI examples: https://github.com/idosal/mcp-ui/tree/main/examples
+- AG-UI repository and examples: https://github.com/ag-ui-protocol/ag-ui
+- OpenAI Apps SDK examples: https://github.com/openai/openai-apps-sdk-examples
+- assistant-ui examples: https://github.com/assistant-ui/assistant-ui/tree/main/examples
+
+## Selection checklist
+
+1. Is the UI shell trusted and versioned?
+2. Are tool payloads schema-validated and authorization-checked server-side?
+3. Does the component registry have a safe unknown-tool fallback?
+4. Can a user preview, approve, undo, or recover consequential actions?
+5. Are loading, empty, error, permission, and accessibility states deterministic?
+6. Is there evidence for task success and multi-turn state consistency?
+
+For every demo, record one happy path and one recovery path. Evaluate intent fit, state continuity, contract safety, interaction recovery, layout/accessibility, and trust calibration.
